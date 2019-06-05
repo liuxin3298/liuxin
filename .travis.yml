@@ -2,9 +2,9 @@ language: java
 sudo :  false
 jobs:
   include:
-    script: echo "`date` Unit Test1" && sleep1
+    script: echo "`date` Unit Test1" && sleep 1
     name: "Unit Tests"
-    - script: echo "date` Integration-tests" && sleep2
+    - script: echo "date` Integration-tests" && slee 2
      name: "Integration-tests"
    - stage: build
     name: "Mvn build"
