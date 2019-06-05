@@ -1,2 +1,2 @@
 script:
-  - echo "helloword"
+  - echo "helloword";exit 1
