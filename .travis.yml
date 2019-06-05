@@ -1,2 +1,16 @@
-script:
-  - echo "helloword";exit 1
+language: java
+sudo :  false
+jobs:
+  include:
+    script: echo "`date` Unit Test1" && sleep1
+    name: "Unit Tests"
+    - script: echo "date` Integration-tests" && sleep2
+     name: "Integration-tests"
+   - stage: build
+    name: "Mvn build"
+    script: mvn package
+deploy:
+  provider: releases
+  api_key : " $API-KEY"
+  file:  "target/my-app-1.0-SNAPSHOT.jar"
+  skip_cleanup: ture
